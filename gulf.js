@@ -53,7 +53,10 @@
 	 and then calls out to the original function.
 	 */
 	_[jsonParsingFunctionName] = function(a, b) {
-		a = a.replaceAll(' (Gulf of America)', "").replaceAll('Gulf of America', 'Gulf of Mexico')
+		a = a
+			.replaceAll(' (Gulf of America)', "")
+			.replaceAll(' (Gulf of Mexico)', "")
+			.replaceAll('Gulf of America', 'Gulf of Mexico')
 		return originalJsonParsingFunction(a, b)
 	}
 
